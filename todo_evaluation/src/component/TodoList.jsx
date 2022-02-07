@@ -24,7 +24,7 @@ export const TodoList = ({ list, setList }) => {
     return (
         <div>
             <ol>
-                {list.filter(item => showCompleted ? true : !item.status).map((item) => <TodoListItem key={item.id} item={item} deleteTodo={deleteTodo} toggle={toggle} />)}
+                {list.filter(item => showCompleted ? true : item.status).map((item) => <TodoListItem key={item.id} item={item} deleteTodo={deleteTodo} toggle={toggle} />)}
             </ol>
             <button className={styles.button2} onClick={() => setShowCompleted(!showCompleted)}>{showCompleted ? "Show Completed ToDos" : "Show All ToDos"}</button>
         </div>
